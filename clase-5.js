@@ -64,5 +64,17 @@ let x = true;
 let xNueva = JSON.stringify(x);
 console.log(xNueva);
 
-let xConvertida = JSON.parse("dsadas");
-console.log(xConvertida);
+// let xConvertida = JSON.parse("dsadas");
+// console.log(xConvertida);
+
+// OBTENER - GUARDAR - ELIMINAR
+// local como en el session
+
+// GUARDAR
+let preferenciasUsuario = { modoOscuro: true, letra: "pequeña" };
+
+localStorage.setItem("preferencias", JSON.stringify(preferenciasUsuario));
+
+// let preferencias = localStorage.getItem("preferencias") // convertir con JSON.parse
+let preferencias = JSON.parse(localStorage.getItem("preferencias")); // convertir con JSON.parse
+console.log(preferencias);

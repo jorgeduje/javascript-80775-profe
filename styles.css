@@ -3,3 +3,45 @@
   padding: 0;
   box-sizing: 0;
 }
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.producto {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.producto p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.producto p strong {
+  color: #000;
+}
