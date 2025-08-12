@@ -1,37 +1,42 @@
-let productos = JSON.parse(localStorage.getItem("carrito"));
-if (!productos) {
-  productos = [];
-}
-const container = document.getElementById("container");
+// recuperar lo del local storage
+// renderizar esos productos
+// y dar la opcion de limpiar el carrito
+// o borrar uno a uno los elementos
 
-container.innerHTML = productos
-  .map(
-    (p) => `
-  <div class="producto">
-    <h3>${p.nombre}</h3>
-    <p><strong>ID:</strong> ${p.id}</p>
-    <p><strong>Precio:</strong> $${p.precio}</p>
-    <p><strong>Stock:</strong> ${p.stock}</p>
-    <button>Eliminar</button>
-  </div>
-`
-  )
-  .join("");
+let productosDelCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-localStorage.setItem("a", "pepe");
-localStorage.setItem("b", "juan");
-localStorage.setItem("c", "maria");
+const renderizarProductos = () => {
+  let container = document.getElementById("products");
 
-localStorage.removeItem("b");
-// localStorage.removeItem("carrito");
+  let todasLasTarjetas = "";
 
-localStorage.setItem("a", "pepe x2");
-localStorage.setItem("a", "pepe x3");
+  productosDelCarrito.forEach((producto) => {
+    todasLasTarjetas += `
+    <div class="card">
+      <h2>${producto.nombre}</h2>
+      <h3>${producto.precio}</h3>
+      <button onclick="remover(${producto.id})">Eliminar</button>
+    </div>
+        `;
+  });
 
-// const eliminar = (cual) => {
-//   let arrayGuardado = [{}, {}, {}];
-// };
-let nuevoArray = [{}];
-localStorage.setItem("carrito", JSON.stringify(nuevoArray));
+  container.innerHTML = todasLasTarjetas;
+};
+renderizarProductos();
 
-// localStorage.clear();
+const remover = (id) => {
+  let productosFiltrados = productosDelCarrito.filter(
+    (productos) => productos.id !== id
+  );
+
+  productosDelCarrito = productosFiltrados;
+  localStorage.setItem("carrito", JSON.stringify(productosDelCarrito));
+  renderizarProductos();
+};
+
+let botonLimpiar = document.getElementById("limpiar");
+botonLimpiar.addEventListener("click", () => {
+  productosDelCarrito = [];
+  localStorage.removeItem("carrito");
+  renderizarProductos();
+});

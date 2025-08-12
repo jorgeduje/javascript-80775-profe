@@ -3,19 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="./styles.css" />
-
     <title>Document</title>
   </head>
   <body>
-    <nav>
-      <a href="./index.html">Inicio</a>
-      <a href="./carrito.html">Carrito</a>
-    </nav>
-    <h1>Mi ecommerce</h1>
-    <h2>Aca van los productos</h2>
-    <div id="container"></div>
-    <script src="./banco.js"></script>
+    <h1 id="title">Mi app</h1>
+    <a href="./carrito.html">Ir al carrito</a>
+
+    <ul class="container-categories">
+      <li class="category">remeras</li>
+      <li class="category">zapatillas</li>
+      <li class="category">perfumes</li>
+    </ul>
+
+    <button id="btn-cambiar-modo">cambiar a modo oscuro</button>
+    <button id="render">renderizar</button>
+
+    <div id="products"></div>
+    <script src="./productos.js"></script>
   </body>
 </html>
