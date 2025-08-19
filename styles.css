@@ -33,3 +33,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
+.card {
+  border: 2px solid black;
+  width: 400px;
+}
