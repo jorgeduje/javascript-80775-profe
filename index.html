@@ -4,22 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" type="text/html" href="sweetalert2.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
-    <h1 id="title">Mi app</h1>
-    <a href="./carrito.html">Ir al carrito</a>
-
-    <ul class="container-categories">
-      <li class="category">remeras</li>
-      <li class="category">zapatillas</li>
-      <li class="category">perfumes</li>
-    </ul>
-
-    <button id="btn-cambiar-modo">cambiar a modo oscuro</button>
-    <button id="render">renderizar</button>
-
+    <h1>promesas</h1>
+    <button id="btn-crear">Crear producto</button>
+    <button id="alerta-uno">Disparar alerta 1</button>
+    <button id="toast">Disparar toast 1</button>
     <div id="products"></div>
-    <script src="./productos.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./promesas.js"></script>
   </body>
 </html>
